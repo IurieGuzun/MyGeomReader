@@ -10,7 +10,31 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Spacer()
+            Image("Swift")
+            Spacer()
+            ZStack{
+                HStack {
+                    Text("Hello,    World!")
+                    Spacer()
+                    Text("Good Buy,    Iurie!")
+                }.padding()
+                GeometryReader { geo in
+                    HStack {
+                    Text("Ok")
+                        .frame(width: geo.size.width / 4, height: geo.size.height / 2)
+                        .background(Color.yellow)
+                    
+                    Text("")
+                        .frame(width: geo.size.width / 4, height: geo.size.height / 2)
+                       .background(Color.gray)
+                    }
+                }
+            }
+            Spacer()
+        }
+        
     }
 }
 
